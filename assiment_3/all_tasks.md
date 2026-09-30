@@ -128,29 +128,28 @@ int main() {
 ```cpp
 #include <iostream>
 #include <vector>
+
 using namespace std;
-int main(){
-    int max = 0;
-    cin >> max;
-    vector<int> values(max);
-    vector<int> new_val(max);
-    int max_values_1 = values[0];
-    for (int i = 1; i <= max; i++){
+
+int main() {
+    int n;
+    if (!(cin >> n) || n <= 0) {
+        return 0;
+    }
+
+    vector<int> values(n);
+    for (int i = 0; i < n; i++) {
         cin >> values[i];
     }
-    int num = 0;
-    for(int j : values){
-        if(j == num){
-            new_val[j] = j;
-            num +=1;
+    cout << values[0];
+    for (int i = 1; i < n; i++) {
+        if (values[i] != values[i - 1]) {
+            cout << " " << values[i];
         }
     }
-    for(int r : new_val){
-        if(r == 0){
-            continue;
-        }
-        cout << r << endl;
-    }
+    cout << endl;
+
+    return 0;
 }```
 
 ## task_1.cpp
