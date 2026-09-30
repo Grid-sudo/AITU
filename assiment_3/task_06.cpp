@@ -13,11 +13,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> values[i];
     }
-
-    // Выводим первый элемент
     cout << values[0];
-    
-    // Проверяем каждый следующий элемент с предыдущим
     for (int i = 1; i < n; i++) {
         if (values[i] != values[i - 1]) {
             cout << " " << values[i];
